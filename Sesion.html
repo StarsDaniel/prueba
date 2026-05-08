@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Inicio de Sesión | Dulce Aroma</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:
+      linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+      url('https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1974&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+    }
+
+    /* LOGIN BOX */
+
+    .login-container{
+      width:400px;
+      background:rgba(255,255,255,0.12);
+      backdrop-filter:blur(12px);
+      border:1px solid rgba(255,255,255,0.2);
+      border-radius:25px;
+      padding:45px;
+      color:white;
+      box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .logo{
+      text-align:center;
+      margin-bottom:30px;
+    }
+
+    .logo h1{
+      font-size:40px;
+      color:#fbbf24;
+    }
+
+    .logo p{
+      color:#f5f5f5;
+      margin-top:10px;
+    }
+
+    /* FORM */
+
+    .input-group{
+      margin-bottom:22px;
+    }
+
+    .input-group label{
+      display:block;
+      margin-bottom:8px;
+      font-size:15px;
+    }
+
+    .input-group input{
+      width:100%;
+      padding:15px;
+      border:none;
+      outline:none;
+      border-radius:12px;
+      background:rgba(255,255,255,0.15);
+      color:white;
+      font-size:16px;
+    }
+
+    .input-group input::placeholder{
+      color:#ddd;
+    }
+
+    /* OPTIONS */
+
+    .options{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:25px;
+      font-size:14px;
+    }
+
+    .options a{
+      color:#fbbf24;
+      text-decoration:none;
+    }
+
+    /* BUTTON */
+
+    .btn{
+      width:100%;
+      padding:15px;
+      border:none;
+      border-radius:12px;
+      background:#d97706;
+      color:white;
+      font-size:17px;
+      cursor:pointer;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#b45309;
+      transform:translateY(-3px);
+    }
+
+    /* FOOTER */
+
+    .footer{
+      margin-top:25px;
+      text-align:center;
+      font-size:14px;
+      color:#eee;
+    }
+
+    .footer a{
+      color:#fbbf24;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:480px){
+
+      .login-container{
+        width:90%;
+        padding:35px 25px;
+      }
+
+      .logo h1{
+        font-size:32px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- LOGIN -->
+
+  <div class="login-container">
+
+    <div class="logo">
+
+      <h1>🥖 Dulce Aroma</h1>
+
+      <p>
+        Accede al panel de administración
+      </p>
+
+    </div>
+
+    <form>
+
+      <div class="input-group">
+
+        <label>Correo electrónico</label>
+
+        <input 
+          type="email"
+          placeholder="admin@dulcearoma.com"
+        >
+
+      </div>
+
+      <div class="input-group">
+
+        <label>Contraseña</label>
+
+        <input 
+          type="password"
+          placeholder="********"
+        >
+
+      </div>
+
+      <div class="options">
+
+        <label>
+          <input type="checkbox">
+          Recordarme
+        </label>
+
+        <a href="#">
+          ¿Olvidaste tu contraseña?
+        </a>
+
+      </div>
+
+      <a href="Admin.html">
+          Iniciar Sesión
+        </a>
+
+    </form>
+
+    <div class="footer">
+
+      © 2026 Dulce Aroma
+
+    </div>
+
+  </div>
+
+</body>
+</html>

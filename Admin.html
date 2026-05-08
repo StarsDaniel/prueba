@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Panel Administrador</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    body{
+      background:#f8f5f2;
+      display:flex;
+      min-height:100vh;
+      color:#4b2e2e;
+    }
+
+    /* SIDEBAR */
+
+    .sidebar{
+      width:280px;
+      background:#4b2e2e;
+      padding:30px 20px;
+      color:white;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .logo{
+      text-align:center;
+      margin-bottom:40px;
+    }
+
+    .logo h2{
+      font-size:30px;
+      color:#fbbf24;
+    }
+
+    .menu{
+      display:flex;
+      flex-direction:column;
+      gap:15px;
+    }
+
+    .menu a{
+      text-decoration:none;
+      color:white;
+      padding:15px;
+      border-radius:12px;
+      transition:0.3s;
+      font-size:16px;
+    }
+
+    .menu a:hover{
+      background:#6b3f25;
+    }
+
+    .logout{
+      background:#dc2626;
+      text-align:center;
+      padding:14px;
+      border-radius:12px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .logout:hover{
+      background:#b91c1c;
+    }
+
+    /* MAIN */
+
+    .main{
+      flex:1;
+      padding:40px;
+    }
+
+    /* TOPBAR */
+
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:40px;
+    }
+
+    .topbar h1{
+      font-size:35px;
+      color:#7c2d12;
+    }
+
+    .admin-profile{
+      display:flex;
+      align-items:center;
+      gap:15px;
+      background:white;
+      padding:10px 20px;
+      border-radius:15px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .admin-profile img{
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      object-fit:cover;
+    }
+
+    /* CARDS */
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+      margin-bottom:40px;
+    }
+
+    .card{
+      background:white;
+      padding:30px;
+      border-radius:20px;
+      box-shadow:0 10px 20px rgba(0,0,0,0.05);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .card h3{
+      margin-bottom:10px;
+      color:#7c2d12;
+    }
+
+    .card p{
+      font-size:30px;
+      font-weight:bold;
+      color:#d97706;
+    }
+
+    /* TABLE */
+
+    .orders{
+      background:white;
+      padding:30px;
+      border-radius:20px;
+      box-shadow:0 10px 20px rgba(0,0,0,0.05);
+    }
+
+    .orders h2{
+      margin-bottom:20px;
+      color:#7c2d12;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+    }
+
+    table th{
+      background:#f3e8dc;
+      padding:15px;
+      text-align:left;
+      color:#7c2d12;
+    }
+
+    table td{
+      padding:15px;
+      border-bottom:1px solid #eee;
+    }
+
+    .status{
+      padding:8px 12px;
+      border-radius:20px;
+      font-size:14px;
+      color:white;
+      display:inline-block;
+    }
+
+    .pending{
+      background:#f59e0b;
+    }
+
+    .completed{
+      background:#10b981;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:900px){
+
+      body{
+        flex-direction:column;
+      }
+
+      .sidebar{
+        width:100%;
+      }
+
+      .topbar{
+        flex-direction:column;
+        gap:20px;
+        align-items:flex-start;
+      }
+
+      table{
+        font-size:14px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+
+  <aside class="sidebar">
+
+    <div>
+
+      <div class="logo">
+        <h2>🥖 Dulce Aroma</h2>
+      </div>
+
+      <div class="menu">
+
+        <a href="#">📊 Dashboard</a>
+
+        <a href="#">🛒 Pedidos</a>
+
+        <a href="#">👥 Clientes</a>
+
+        <a href="#">🍞 Productos</a>
+
+        <a href="Reportes.html">💰 Reportes</a>
+
+        <a href="#">⚙ Configuración</a>
+
+      </div>
+
+    </div>
+
+    <div class="logout">
+      Cerrar Sesión
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+
+  <main class="main">
+
+    <!-- TOPBAR -->
+
+    <div class="topbar">
+
+      <h1>Panel de Administración</h1>
+
+      <div class="admin-profile">
+
+        <img src="https://i.pravatar.cc/150?img=12">
+
+        <div>
+          <strong>Administrador</strong>
+          <p>admin@dulcearoma.com</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- STATS -->
+
+    <section class="stats">
+
+      <div class="card">
+        <h3>Ventas Hoy</h3>
+        <p>$8,450</p>
+      </div>
+
+      <div class="card">
+        <h3>Pedidos</h3>
+        <p>52</p>
+      </div>
+
+      <div class="card">
+        <h3>Clientes</h3>
+        <p>128</p>
+      </div>
+
+      <div class="card">
+        <h3>Ganancias</h3>
+        <p>$24,900</p>
+      </div>
+
+    </section>
+
+    <!-- TABLE -->
+
+    <section class="orders">
+
+      <h2>Pedidos Recientes</h2>
+
+      <table>
+
+        <tr>
+          <th>Cliente</th>
+          <th>Producto</th>
+          <th>Total</th>
+          <th>Estado</th>
+        </tr>
+
+        <tr>
+          <td>Juan Pérez</td>
+          <td>Pastel Chocolate</td>
+          <td>$450</td>
+          <td>
+            <span class="status pending">
+              Pendiente
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Ana López</td>
+          <td>Croissants</td>
+          <td>$120</td>
+          <td>
+            <span class="status completed">
+              Entregado
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Carlos Ruiz</td>
+          <td>Pan Dulce</td>
+          <td>$85</td>
+          <td>
+            <span class="status completed">
+              Entregado
+            </span>
+          </td>
+        </tr>
+
+      </table>
+
+    </section>
+
+  </main>
+
+</body>
+</html>

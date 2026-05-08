@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Reportes | Dulce Aroma</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    body{
+      background:#f8f5f2;
+      color:#4b2e2e;
+      display:flex;
+      min-height:100vh;
+    }
+
+    /* SIDEBAR */
+
+    .sidebar{
+      width:280px;
+      background:#4b2e2e;
+      color:white;
+      padding:30px 20px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .logo{
+      text-align:center;
+      margin-bottom:40px;
+    }
+
+    .logo h2{
+      color:#fbbf24;
+      font-size:30px;
+    }
+
+    .menu{
+      display:flex;
+      flex-direction:column;
+      gap:15px;
+    }
+
+    .menu a{
+      text-decoration:none;
+      color:white;
+      padding:15px;
+      border-radius:12px;
+      transition:0.3s;
+    }
+
+    .menu a:hover{
+      background:#6b3f25;
+    }
+
+    .logout{
+      background:#dc2626;
+      padding:14px;
+      text-align:center;
+      border-radius:12px;
+      cursor:pointer;
+    }
+
+    /* MAIN */
+
+    .main{
+      flex:1;
+      padding:40px;
+    }
+
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:40px;
+    }
+
+    .topbar h1{
+      font-size:40px;
+      color:#7c2d12;
+    }
+
+    /* FILTERS */
+
+    .filters{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+      margin-bottom:40px;
+    }
+
+    .filters select,
+    .filters input{
+      padding:14px;
+      border:none;
+      border-radius:12px;
+      background:white;
+      box-shadow:0 5px 15px rgba(0,0,0,0.05);
+      font-size:15px;
+    }
+
+    .btn{
+      padding:14px 25px;
+      border:none;
+      border-radius:12px;
+      background:#d97706;
+      color:white;
+      cursor:pointer;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#b45309;
+      transform:translateY(-3px);
+    }
+
+    /* CARDS */
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+      margin-bottom:40px;
+    }
+
+    .card{
+      background:white;
+      padding:30px;
+      border-radius:20px;
+      box-shadow:0 10px 20px rgba(0,0,0,0.05);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .card h3{
+      margin-bottom:10px;
+      color:#7c2d12;
+    }
+
+    .card p{
+      font-size:30px;
+      font-weight:bold;
+      color:#d97706;
+    }
+
+    /* REPORT SECTION */
+
+    .reports{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+      gap:30px;
+    }
+
+    .report-box{
+      background:white;
+      padding:30px;
+      border-radius:20px;
+      box-shadow:0 10px 20px rgba(0,0,0,0.05);
+    }
+
+    .report-box h2{
+      margin-bottom:25px;
+      color:#7c2d12;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-bottom:20px;
+    }
+
+    table th{
+      background:#f3e8dc;
+      padding:15px;
+      text-align:left;
+      color:#7c2d12;
+    }
+
+    table td{
+      padding:15px;
+      border-bottom:1px solid #eee;
+    }
+
+    /* EXPORT BUTTONS */
+
+    .export-buttons{
+      display:flex;
+      gap:15px;
+      flex-wrap:wrap;
+      margin-top:20px;
+    }
+
+    .pdf{
+      background:#dc2626;
+    }
+
+    .excel{
+      background:#10b981;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:900px){
+
+      body{
+        flex-direction:column;
+      }
+
+      .sidebar{
+        width:100%;
+      }
+
+      .topbar{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+
+  <aside class="sidebar">
+
+    <div>
+
+      <div class="logo">
+        <h2>🥖 Dulce Aroma</h2>
+      </div>
+
+      <div class="menu">
+
+        <a href="#">📊 Dashboard</a>
+
+        <a href="#">🛒 Pedidos</a>
+
+        <a href="#">👥 Clientes</a>
+
+        <a href="#">🍞 Productos</a>
+
+        <a href="#">💰 Reportes</a>
+
+        <a href="#">⚙ Configuración</a>
+
+      </div>
+
+    </div>
+
+    <div class="logout">
+      Cerrar Sesión
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+
+  <main class="main">
+
+    <!-- TOPBAR -->
+
+    <div class="topbar">
+
+      <h1>Reportes Financieros y Operativos</h1>
+
+      <button class="btn">
+        Generar Reporte
+      </button>
+
+    </div>
+
+    <!-- FILTERS -->
+
+    <div class="filters">
+
+      <input type="date">
+
+      <input type="date">
+
+      <select>
+        <option>Todos los Reportes</option>
+        <option>Financieros</option>
+        <option>Operativos</option>
+      </select>
+
+      <button class="btn">
+        Filtrar
+      </button>
+
+    </div>
+
+    <!-- CARDS -->
+
+    <section class="cards">
+
+      <div class="card">
+        <h3>Ventas Totales</h3>
+        <p>$125,400</p>
+      </div>
+
+      <div class="card">
+        <h3>Gastos</h3>
+        <p>$48,200</p>
+      </div>
+
+      <div class="card">
+        <h3>Ganancia</h3>
+        <p>$77,200</p>
+      </div>
+
+      <div class="card">
+        <h3>Pedidos Completados</h3>
+        <p>1,248</p>
+      </div>
+
+    </section>
+
+    <!-- REPORTS -->
+
+    <section class="reports">
+
+      <!-- FINANCIAL -->
+
+      <div class="report-box">
+
+        <h2>💰 Reporte Financiero</h2>
+
+        <table>
+
+          <tr>
+            <th>Concepto</th>
+            <th>Monto</th>
+          </tr>
+
+          <tr>
+            <td>Ingresos</td>
+            <td>$125,400</td>
+          </tr>
+
+          <tr>
+            <td>Gastos</td>
+            <td>$48,200</td>
+          </tr>
+
+          <tr>
+            <td>Utilidad</td>
+            <td>$77,200</td>
+          </tr>
+
+        </table>
+
+        <div class="export-buttons">
+
+          <button class="btn pdf">
+            Exportar PDF
+          </button>
+
+          <button class="btn excel">
+            Exportar Excel
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- OPERATIONAL -->
+
+      <div class="report-box">
+
+        <h2>📦 Reporte Operativo</h2>
+
+        <table>
+
+          <tr>
+            <th>Métrica</th>
+            <th>Resultado</th>
+          </tr>
+
+          <tr>
+            <td>Pedidos Entregados</td>
+            <td>1,248</td>
+          </tr>
+
+          <tr>
+            <td>Pedidos Pendientes</td>
+            <td>52</td>
+          </tr>
+
+          <tr>
+            <td>Tiempo Promedio</td>
+            <td>32 min</td>
+          </tr>
+
+        </table>
+
+        <div class="export-buttons">
+
+          <button class="btn pdf">
+            Exportar PDF
+          </button>
+
+          <button class="btn excel">
+            Exportar Excel
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+</html>
