@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Productos | Dulce Aroma</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    body{
+      background:#fffaf5;
+      color:#4b2e2e;
+      overflow-x:hidden;
+    }
+
+    /* HEADER */
+
+    header{
+      width:100%;
+      padding:20px 8%;
+      background:white;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .logo{
+      font-size:30px;
+      font-weight:bold;
+      color:#8b4513;
+    }
+
+    nav{
+      display:flex;
+      gap:20px;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:#5c4033;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#d97706;
+    }
+
+    /* HERO */
+
+    .hero{
+      padding:80px 8% 40px;
+      text-align:center;
+    }
+
+    .hero h1{
+      font-size:55px;
+      margin-bottom:15px;
+      color:#7c2d12;
+    }
+
+    .hero p{
+      color:#6b7280;
+      font-size:18px;
+    }
+
+    /* FILTERS */
+
+    .filters{
+      padding:20px 8%;
+      display:flex;
+      justify-content:center;
+      gap:15px;
+      flex-wrap:wrap;
+    }
+
+    .filter-btn{
+      padding:12px 25px;
+      border:none;
+      border-radius:30px;
+      background:white;
+      cursor:pointer;
+      font-weight:600;
+      transition:0.3s;
+      box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .filter-btn:hover{
+      background:#d97706;
+      color:white;
+    }
+
+    /* PRODUCTS */
+
+    .products{
+      padding:40px 8% 100px;
+    }
+
+    .products-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:35px;
+    }
+
+    .product-card{
+      background:white;
+      border-radius:25px;
+      overflow:hidden;
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
+      transition:0.4s;
+      position:relative;
+    }
+
+    .product-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .product-card img{
+      width:100%;
+      height:260px;
+      object-fit:cover;
+    }
+
+    .tag{
+      position:absolute;
+      top:15px;
+      left:15px;
+      background:#fbbf24;
+      color:#4b2e2e;
+      padding:8px 15px;
+      border-radius:30px;
+      font-size:13px;
+      font-weight:bold;
+    }
+
+    .product-content{
+      padding:25px;
+    }
+
+    .product-content h3{
+      margin-bottom:10px;
+      color:#7c2d12;
+      font-size:24px;
+    }
+
+    .product-content p{
+      color:#6b7280;
+      margin-bottom:20px;
+      line-height:1.6;
+    }
+
+    .price{
+      font-size:28px;
+      font-weight:bold;
+      color:#d97706;
+      margin-bottom:20px;
+    }
+
+    .btn{
+      width:100%;
+      padding:15px;
+      border:none;
+      border-radius:15px;
+      background:#d97706;
+      color:white;
+      font-size:16px;
+      cursor:pointer;
+      transition:0.3s;
+      font-weight:bold;
+    }
+
+    .btn:hover{
+      background:#b45309;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#3b2416;
+      color:white;
+      text-align:center;
+      padding:30px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      header{
+        flex-direction:column;
+        gap:15px;
+        padding:20px 5%;
+      }
+
+      nav{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero{
+        padding:60px 5% 30px;
+      }
+
+      .hero h1{
+        font-size:38px;
+      }
+
+      .products{
+        padding:30px 5% 80px;
+      }
+
+      .products-grid{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="logo">
+      🥖 El Horno Digital
+    </div>
+
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="Productos.html">Productos</a>
+      <a href="Nosotros.hmtl">Nosotros</a>
+      <a href="Sesion.html">Inicia Sesión</a>
+    </nav>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <h1>Nuestros Productos</h1>
+
+    <p>
+      Pan artesanal, postres y pasteles recién horneados todos los días.
+    </p>
+
+  </section>
+
+  <!-- FILTERS -->
+
+  <section class="filters">
+
+    <button class="filter-btn">
+      Todos
+    </button>
+
+    <button class="filter-btn">
+      Pan Dulce
+    </button>
+
+    <button class="filter-btn">
+      Pasteles
+    </button>
+
+    <button class="filter-btn">
+      Galletas
+    </button>
+
+    <button class="filter-btn">
+      Bebidas
+    </button>
+
+  </section>
+
+  <!-- PRODUCTS -->
+
+  <section class="products">
+
+    <div class="products-grid">
+
+      <!-- PRODUCT 1 -->
+
+      <div class="product-card">
+
+        <div class="tag">
+          Popular
+        </div>
+
+        <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?q=80&w=1974&auto=format&fit=crop">
+
+        <div class="product-content">
+
+          <h3>Croissant Artesanal</h3>
+
+          <p>
+            Croissant crujiente preparado con mantequilla premium.
+          </p>
+
+          <div class="price">
+            $35
+          </div>
+
+          <button class="btn">
+            Agregar al carrito
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- PRODUCT 2 -->
+
+      <div class="product-card">
+
+        <div class="tag">
+          Nuevo
+        </div>
+
+        <img src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?q=80&w=1974&auto=format&fit=crop">
+
+        <div class="product-content">
+
+          <h3>Pan Dulce</h3>
+
+          <p>
+            Tradicional pan dulce mexicano recién horneado.
+          </p>
+
+          <div class="price">
+            $22
+          </div>
+
+          <button class="btn">
+            Agregar al carrito
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- PRODUCT 3 -->
+
+      <div class="product-card">
+
+        <div class="tag">
+          Especial
+        </div>
+
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1889&auto=format&fit=crop">
+
+        <div class="product-content">
+
+          <h3>Pastel de Chocolate</h3>
+
+          <p>
+            Pastel suave con cobertura cremosa de chocolate.
+          </p>
+
+          <div class="price">
+            $450
+          </div>
+
+          <button class="btn">
+            Agregar al carrito
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- PRODUCT 4 -->
+
+      <div class="product-card">
+
+        <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=1974&auto=format&fit=crop">
+
+        <div class="product-content">
+
+          <h3>Galletas Caseras</h3>
+
+          <p>
+            Galletas recién horneadas con chispas de chocolate.
+          </p>
+
+          <div class="price">
+            $60
+          </div>
+
+          <button class="btn">
+            Agregar al carrito
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- PRODUCT 5 -->
+
+      <div class="product-card">
+
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1974&auto=format&fit=crop">
+
+        <div class="product-content">
+
+          <h3>Café Latte</h3>
+
+          <p>
+            Café artesanal preparado al momento.
+          </p>
+
+          <div class="price">
+            $55
+          </div>
+
+          <button class="btn">
+            Agregar al carrito
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- PRODUCT 6 -->
+
+      <div class="product-card">
+
+        <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?q=80&w=1974&auto=format&fit=crop">
+
+        <div class="product-content">
+
+          <h3>Donas Glaseadas</h3>
+
+          <p>
+            Donas suaves cubiertas con glaseado dulce.
+          </p>
+
+          <div class="price">
+            $28
+          </div>
+
+          <button class="btn">
+            Agregar al carrito
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 Panadería Dulce Aroma | Todos los derechos reservados
+
+  </footer>
+
+</body>
+</html>
